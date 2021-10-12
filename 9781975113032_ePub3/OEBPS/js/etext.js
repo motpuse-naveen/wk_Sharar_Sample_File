@@ -368,3 +368,19 @@ function processPage(page, pagedata) {
 
 	return [totaluserscore, totalpagescore, totalalerts, totalearnedstars, totalpossiblestars, totalseen];
 }
+
+function openLinkInNewTab(url) {
+	console.log(url)
+	var isError = true;
+	try{
+		isError = false;
+		window.open(url, '_blank').focus();
+	}
+	catch(err){
+		console.log("Open New window: " + err)
+		if(isError){
+			window.location.href = url;
+		}
+	}
+	return false;
+}
